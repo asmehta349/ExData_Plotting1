@@ -34,8 +34,8 @@ for (i in 1:length(colnames(df))){
 datetime <- paste(df$Date, df$Time)
 datetime <- strptime(datetime, "%d/%m/%Y %H:%M:%S")
 
-# Open the PNG graphics device.
-png(filename = "./plot2.png", width = 480, height = 480)
+# Open the PNG graphics device, set the size to 480x480 pixels, and make the background transparent.
+png(filename = "./plot2.png", width = 480, height = 480, units = "px", bg = "transparent")
 
 # Create a line chart for the global minute-averaged active power usage.
 plot(datetime,as.numeric(df$Global_active_power), xlab = "",

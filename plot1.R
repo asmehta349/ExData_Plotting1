@@ -30,8 +30,8 @@ for (i in 1:length(colnames(df))){
     setnames(df, colnames(df)[i], cols[i])
 }
     
-# Open the PNG graphics device.
-png(filename = "./plot1.png", width = 480, height = 480)
+# Open the PNG graphics device, set the size to 480x480 pixels, and make the background transparent.
+png(filename = "./plot1.png", width = 480, height = 480, units = "px", bg = "transparent")
 
 # Create a histogram of global minute-averaged active power usage.
 hist(as.numeric(df$Global_active_power), xlab = "Global Active Power (kilowatts)",

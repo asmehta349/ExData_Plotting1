@@ -34,8 +34,8 @@ for (i in 1:length(colnames(df))){
 datetime <- paste(df$Date, df$Time)
 datetime <- strptime(datetime, "%d/%m/%Y %H:%M:%S")
 
-# Open the PNG graphics device.
-png(filename = "./plot3.png", width = 480, height = 480)
+# Open the PNG graphics device, set the size to 480x480 pixels, and make the background transparent.
+png(filename = "./plot3.png", width = 480, height = 480, units = "px", bg = "transparent")
 
 # Create a line chart with legends for sub-metered power usage data.
 plot(datetime,as.numeric(df$Sub_metering_1), xlab = "",
